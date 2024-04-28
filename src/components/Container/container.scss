@@ -1,0 +1,17 @@
+.container {
+  background-image: url("../../assets/womakup.jpg");
+  background-size: 70vh;
+  background-repeat: no-repeat;
+  background-position: -5rem 5rem;
+  background-color: #ffffff;
+  padding: 3rem;
+  height: 100vh;
+  overflow: auto;
+
+  &-list {
+    margin-top: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 30rem;
+  }
+}
