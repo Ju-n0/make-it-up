@@ -9,7 +9,7 @@ function Cart() {
   const isLogged = useAppSelector((state) => state.usersReducer.isLogged);
 
   if (!isLogged) {
-    return <Navigate to={"/"} />;
+    return <Navigate to={import.meta.env.BASE_URL} />;
   }
 
   const priceCalculation = (price: number, quantity: number) => {

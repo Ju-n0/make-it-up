@@ -9,7 +9,6 @@ import {
   actionResetCurrentCart,
 } from "../ToolkitActions";
 import { IUser } from "../../@types/user";
-import { Product } from "../../@types/Product";
 import users from "../../data/users.json";
 import { Cart } from "../../@types/Cart";
 

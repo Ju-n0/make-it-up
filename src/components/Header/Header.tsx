@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import "./header.scss";
 import { useAppSelector, useAppDispatch } from "../../hooks/redux";
 import { actionLogOut } from "../../store/ToolkitActions";
@@ -18,6 +18,9 @@ function Header({ connexionHidden, setConnexionHidden }: HeaderProps) {
     // dispatch(actionResetCurrentCart());
   };
 
+  const { pathname } = useLocation();
+  const baseUrl = import.meta.env.BASE_URL;
+
   return (
     <div>
       <img className="header-img" src={dore} alt="" />
@@ -25,10 +28,11 @@ function Header({ connexionHidden, setConnexionHidden }: HeaderProps) {
         <h1 className="header-title">Make it Up</h1>
         <nav>
           <NavLink
-            className={({ isActive }) => {
-              return isActive ? "header-link header-link--active" : "header-link";
+            className={() => {
+              const regexp = new RegExp(`^${baseUrl}/?$`, "g");
+              return regexp.test(pathname) ? "header-link header-link--active" : "header-link";
             }}
-            to="/"
+            to={baseUrl}
           >
             Accueil
           </NavLink>
@@ -36,7 +40,7 @@ function Header({ connexionHidden, setConnexionHidden }: HeaderProps) {
             className={({ isActive }) => {
               return isActive ? "header-link header-link--active" : "header-link";
             }}
-            to="/search"
+            to={`${baseUrl}/search`}
           >
             Search
           </NavLink>
@@ -46,7 +50,7 @@ function Header({ connexionHidden, setConnexionHidden }: HeaderProps) {
                 className={({ isActive }) => {
                   return isActive ? "header-link header-link--active" : "header-link";
                 }}
-                to="/cart"
+                to={`${baseUrl}/cart`}
               >
                 My cart
               </NavLink>

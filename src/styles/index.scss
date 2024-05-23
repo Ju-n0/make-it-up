@@ -1,5 +1,33 @@
 @use "reset";
 @use "variables" as v;
+
 * {
   box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparentize(v.$color-tertiary, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: v.$color-secondary;
+  border-radius: 10px;
+  border: 2px solid v.$color-secondary;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: darken(v.$color-secondary, 10%);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: lighten(v.$color-secondary, 20%);
+  border-color: lighten(v.$color-secondary, 20%);
+}
+
+::-webkit-scrollbar-track:window-inactive {
+  background: lighten(transparentize(v.$color-tertiary, 0.5), 20%);
 }

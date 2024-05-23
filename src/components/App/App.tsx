@@ -21,16 +21,19 @@ function App() {
       dispatch(actionThunkProducts());
     }
   }, []);
+
+  const baseUrl = import.meta.env.BASE_URL;
+
   return (
     <div className="app">
       <Header connexionHidden={connexionHidden} setConnexionHidden={setConnexionHidden} />
       <Connexion connexionHidden={connexionHidden} setConnexionHidden={setConnexionHidden} />
 
       <Routes>
-        <Route path="/" element={<Container products={products} />} />
-        <Route path="/search" element={<SearchBar products={products} />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/product/:id" element={<ProductPage />} />
+        <Route path={`${baseUrl}/`} element={<Container products={products} />} />
+        <Route path={`${baseUrl}/search`} element={<SearchBar products={products} />} />
+        <Route path={`${baseUrl}/cart`} element={<Cart />} />
+        <Route path={`${baseUrl}/product/:id`} element={<ProductPage />} />
         <Route path="*" element={<Error />} />
       </Routes>
     </div>

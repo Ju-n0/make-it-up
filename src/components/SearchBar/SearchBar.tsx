@@ -8,7 +8,7 @@ interface SearchBarProps {
   products: Product[];
 }
 
-function SearchBar({ products }: searchBarProps) {
+function SearchBar({ products }: Readonly<SearchBarProps>) {
   const [inputBarValue, setInputBarValue] = useState("");
   const results = products.filter((product) => {
     return product.name.toLowerCase().includes(inputBarValue.toLowerCase());

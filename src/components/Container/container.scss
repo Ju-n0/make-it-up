@@ -1,12 +1,12 @@
 .container {
   background-image: url("../../assets/womakup.jpg");
+  background-attachment: fixed;
   background-size: 40%;
   background-repeat: no-repeat;
   background-position: -5rem 22rem;
   background-color: #ffffff;
   padding: 3rem;
-  height: 100vh;
-  overflow: auto;
+  min-height: 100vh;
 
   &-list {
     margin-top: 25rem;

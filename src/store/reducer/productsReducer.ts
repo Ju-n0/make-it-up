@@ -20,7 +20,7 @@ const productsReducer = createReducer(initialState, (builder) => {
     .addCase(actionThunkProducts.pending, (state) => {
       state.isLoading = true;
     })
-    .addCase(actionThunkProducts.rejected, (state, action) => {
+    .addCase(actionThunkProducts.rejected, (state) => {
       console.log("probleme");
 
       // if (action.error.name === '???') {
