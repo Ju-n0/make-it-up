@@ -1,8 +1,8 @@
 @use "../../styles/variables" as v;
 
 .productPage {
-  padding-top: 5rem;
-  width: 70%;
+  padding-top: 20rem;
+  width: 50%;
   margin-inline: auto;
   font-family: "Raleway", sans-serif;
   border-radius: 15px;
@@ -13,7 +13,7 @@
     padding: 1rem;
   }
   &-img {
-    width: 25rem;
+    width: 20rem;
     margin-inline: auto;
   }
   &-title {
@@ -21,7 +21,7 @@
     border: solid 1px v.$color-primary;
     font-weight: 700;
     font-size: 1.5rem;
-    background-color: v.$color-primary;
+    background-color: v.$color-secondary;
     padding: 0.5rem;
     color: #fff;
     width: 100%;
@@ -31,20 +31,21 @@
   }
 
   &-desc {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     text-align: justify;
     line-height: 1.5;
   }
 
   &-price {
     padding-block: 2rem;
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 700;
     color: v.$color-primary;
     align-self: flex-end;
   }
 
   &-link {
+    text-decoration: none;
     color: v.$color-primary;
     display: block;
     align-self: flex-end;

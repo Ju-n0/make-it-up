@@ -1,12 +1,16 @@
 import { Link } from "react-router-dom";
 import { Product } from "../../@types/Product";
 import "./productCard.scss";
+import { useAppDispatch, useAppSelector } from "../../hooks/redux";
+import { actionAddToCart } from "../../store/ToolkitActions";
 
 interface CardProps {
   product: Product;
 }
 
 function ProductCard({ product }: CardProps) {
+  const dispatch = useAppDispatch();
+  const currentCart = useAppSelector((state) => state.usersReducer.currentCart);
   return (
     <article className="card">
       <Link to={`/product/${product.id}`} className="card-link">
@@ -20,11 +24,20 @@ function ProductCard({ product }: CardProps) {
 
         <p className="card-price">{product.price} €</p>
         <Link to={`/product/${product.id}`} className="card-link card-link-bottom">
-          Voir le détail
+          See details
         </Link>
         <Link to={product.product_link} className="card-link card-link-bottom">
-          Voir le site officiel
+          View official website
         </Link>
+        <button
+          className="add-to-cart"
+          onClick={() => {
+            dispatch(actionAddToCart({ product: product } as CardProps));
+            console.log(currentCart);
+          }}
+        >
+          Add to cart
+        </button>
       </div>
     </article>
   );

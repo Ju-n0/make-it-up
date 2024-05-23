@@ -1,0 +1,58 @@
+@use "../../styles/variables" as v;
+
+.connexion-container {
+  background-image: url("../../assets/connexion.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  width: 22rem;
+  height: 18rem;
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem;
+
+  &-hidden {
+    display: none;
+  }
+}
+
+.connexion-form {
+  padding-top: 2rem;
+  padding-right: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 1rem;
+
+  input {
+    padding-inline: 0.5rem;
+    font-size: 1.15rem;
+    border: v.$color-tertiary solid 1px;
+    color: black;
+    border-radius: 15px;
+    width: 12rem;
+  }
+
+  button {
+    padding-block: 0.5rem;
+    padding-inline: 0.75rem;
+    font-size: 1rem;
+    border-radius: 15px;
+    border: none;
+    background-color: v.$color-secondary;
+    cursor: pointer;
+  }
+}
+
+.sign-in-button {
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 15px;
+  background-color: #f2e7df;
+  border: none;
+  margin-left: auto;
+}

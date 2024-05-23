@@ -1,4 +1,6 @@
-.container {
+@use "../../styles/variables" as v;
+
+.search {
   background-image: url("../../assets/womakup.jpg");
   background-size: 40%;
   background-repeat: no-repeat;
@@ -9,9 +11,20 @@
   overflow: auto;
 
   &-list {
-    margin-top: 25rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     margin-left: 30%;
+  }
+
+  &-input {
+    padding: 1rem;
+    font-size: 1.15rem;
+    border: v.$color-tertiary solid 1px;
+    color: black;
+    border-radius: 15px;
+    height: 2rem;
+    width: 50%;
+    margin-top: 25rem;
+    margin-left: 40%;
   }
 }

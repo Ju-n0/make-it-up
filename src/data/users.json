@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "email": "babylone@test.fr",
+    "password": "babylone",
+    "pseudo": "Baby-boy",
+    "cart": []
+  },
+  {
+    "id": 2,
+    "email": "petite-folle@test.fr",
+    "password": "petitefolle",
+    "pseudo": "Tite-folle",
+    "cart": []
+  },
+  {
+    "id": 3,
+    "email": "superman@test.fr",
+    "password": "superman",
+    "pseudo": "Superman",
+    "cart": []
+  },
+  {
+    "id": 4,
+    "email": "barbie@test.fr",
+    "password": "barbie",
+    "pseudo": "Barbie",
+    "cart": []
+  },
+  {
+    "id": 5,
+    "email": "marcus@test.fr",
+    "password": "marcus",
+    "pseudo": "Marcubitus",
+    "cart": []
+  },
+  {
+    "id": 6,
+    "email": "pshiit@test.fr",
+    "password": "pshiit",
+    "pseudo": "PShiit",
+    "cart": []
+  }
+]

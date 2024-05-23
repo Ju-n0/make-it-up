@@ -1,3 +1,8 @@
+@use "sass:color";
+
 $color: #fff;
-$color-primary: #79605b;
 $color-bg: #282c34;
+$color-primary: #bda098;
+$color-secondary: #bc7b5dc1;
+$color-tertiary: #f4b660;
+$color-tertiary-light: color.scale($color-tertiary, $lightness: 40%);
