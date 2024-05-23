@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import "./connexion.scss";
-import { actionCreateUser } from "../../store/ToolkitActions";
-import { actionLogIn } from "../../store/ToolkitActions";
+import { actionCreateUser, actionLogIn } from "../../store/ToolkitActions";
 import { IUser } from "../../@types/user";
 
 interface ConnexionProps {
@@ -10,9 +9,9 @@ interface ConnexionProps {
   setConnexionHidden: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-function Connexion({ connexionHidden, setConnexionHidden }: ConnexionProps) {
-  const [inputEmailValue, setInputEmailValue] = useState("");
-  const [inputPasswordValue, setInputPasswordValue] = useState("");
+function Connexion({ connexionHidden, setConnexionHidden }: Readonly<ConnexionProps>) {
+  const [inputEmailValue, setInputEmailValue] = useState("barbie@test.fr");
+  const [inputPasswordValue, setInputPasswordValue] = useState("barbie");
   const [inputPseudoValue, setInputPseudoValue] = useState("");
   const [signIn, setSignIn] = useState(false);
 
@@ -39,8 +38,6 @@ function Connexion({ connexionHidden, setConnexionHidden }: ConnexionProps) {
       (user: IUser) => user.email === inputEmailValue && user.password === inputPasswordValue
     );
 
-    console.log(currentUser);
-
     if (!currentUser[0]) {
       return;
     }
@@ -54,7 +51,7 @@ function Connexion({ connexionHidden, setConnexionHidden }: ConnexionProps) {
       }
     >
       <button className="sign-in-button" onClick={() => setSignIn(!signIn)}>
-        {signIn ? "Log-In" : "Sign-In"}
+        {signIn ? "Login" : "Register"}
       </button>
       {signIn ? (
         <form
@@ -125,7 +122,7 @@ function Connexion({ connexionHidden, setConnexionHidden }: ConnexionProps) {
             }}
           />
 
-          <button type="submit">Log In</button>
+          <button type="submit">Login</button>
         </form>
       )}
     </div>

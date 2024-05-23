@@ -15,6 +15,7 @@ function Header({ connexionHidden, setConnexionHidden }: HeaderProps) {
   const dispatch = useAppDispatch();
   const handleLogOut = () => {
     dispatch(actionLogOut());
+    // dispatch(actionResetCurrentCart());
   };
 
   return (
@@ -40,14 +41,26 @@ function Header({ connexionHidden, setConnexionHidden }: HeaderProps) {
             Search
           </NavLink>
           {isLogged ? (
-            <button
-              className={!connexionHidden ? "header-button header-button--active" : "header-button"}
-              onClick={() => {
-                handleLogOut();
-              }}
-            >
-              Déconnexion
-            </button>
+            <>
+              <NavLink
+                className={({ isActive }) => {
+                  return isActive ? "header-link header-link--active" : "header-link";
+                }}
+                to="/cart"
+              >
+                My cart
+              </NavLink>
+              <button
+                className={
+                  !connexionHidden ? "header-button header-button--active" : "header-button"
+                }
+                onClick={() => {
+                  handleLogOut();
+                }}
+              >
+                Logout
+              </button>
+            </>
           ) : (
             <button
               className={!connexionHidden ? "header-button header-button--active" : "header-button"}
@@ -55,7 +68,7 @@ function Header({ connexionHidden, setConnexionHidden }: HeaderProps) {
                 setConnexionHidden(!connexionHidden);
               }}
             >
-              Connexion
+              Login
             </button>
           )}
         </nav>

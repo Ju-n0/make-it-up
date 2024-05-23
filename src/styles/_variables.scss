@@ -5,4 +5,5 @@ $color-bg: #282c34;
 $color-primary: #bda098;
 $color-secondary: #bc7b5dc1;
 $color-tertiary: #f4b660;
+$color-primary-light: color.scale($color-primary, $lightness: 40%);
 $color-tertiary-light: color.scale($color-tertiary, $lightness: 40%);

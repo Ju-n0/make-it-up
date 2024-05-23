@@ -9,6 +9,7 @@ import ProductPage from "../ProductPage/ProductPage";
 import actionThunkProducts from "../../store/reducer/thunkProducts";
 import Connexion from "../Connexion/Connexion";
 import SearchBar from "../SearchBar/SearchBar";
+import Cart from "../Cart/Cart";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -28,7 +29,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Container products={products} />} />
         <Route path="/search" element={<SearchBar products={products} />} />
-
+        <Route path="/cart" element={<Cart />} />
         <Route path="/product/:id" element={<ProductPage />} />
         <Route path="*" element={<Error />} />
       </Routes>

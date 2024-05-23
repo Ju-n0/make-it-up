@@ -8,9 +8,10 @@ interface CardProps {
   product: Product;
 }
 
-function ProductCard({ product }: CardProps) {
+function ProductCard({ product }: Readonly<CardProps>) {
   const dispatch = useAppDispatch();
-  const currentCart = useAppSelector((state) => state.usersReducer.currentCart);
+  const logged = useAppSelector((state) => state.usersReducer.isLogged);
+
   return (
     <article className="card">
       <Link to={`/product/${product.id}`} className="card-link">
@@ -32,8 +33,7 @@ function ProductCard({ product }: CardProps) {
         <button
           className="add-to-cart"
           onClick={() => {
-            dispatch(actionAddToCart({ product: product } as CardProps));
-            console.log(currentCart);
+            logged && dispatch(actionAddToCart({ product: product } as CardProps));
           }}
         >
           Add to cart

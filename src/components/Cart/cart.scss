@@ -1,0 +1,80 @@
+@use "../../styles/variables" as v;
+
+.container-cart {
+  font-family: "Raleway", sans-serif;
+  margin-left: 30%;
+  margin-top: 25rem;
+  background-color: v.$color-primary-light;
+  border-radius: 15px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.cart-item {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 0.5rem;
+
+  &-title {
+    font-size: 1.5rem;
+  }
+
+  &-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+
+    &-img {
+      width: 20%;
+      max-width: 15rem;
+    }
+
+    &-quantity input {
+      width: 2rem;
+      font-size: 1rem;
+      text-align: center;
+      margin-top: 0.25rem;
+    }
+
+    &-desc {
+      font-size: 1.15rem;
+
+      &-details {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+
+    &-price {
+      width: 15rem;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.cart-total {
+  font-size: 1.25rem;
+  margin-left: auto;
+  span {
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-left: 2rem;
+  }
+}
+
+.cart-item-delete {
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  background-color: v.$color-tertiary;
+  padding-inline: 0.5rem;
+  border-radius: 15px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
